@@ -1,0 +1,52 @@
+* {
+    font-family: 'Open Sans', sans-serif;
+}
+
+
+body { 
+    margin: 0;
+    padding: 0;
+    background-image: url("topography.png");
+}
+
+.menu {
+    padding: 10px;
+    height: 30px;
+    background-color: #333333;
+    text-align: right;
+}
+
+.link {
+    display: inline;
+    padding: 0 10%;
+}
+
+a { 
+    padding: 10px;
+    color: #ff0099;
+}
+
+
+h1,
+p {  
+    padding: 0 10%;
+    text-align: left;
+}
+
+h2,
+h4 {
+    padding: 0 10%;
+    text-align: center;
+}
+
+
+h3 {
+    padding: 0 10%; 
+    color: #ff0099;
+}
+
+img {
+    padding: 0 10%; 
+    margin: 0;
+    float: left;
+}
