@@ -1,5 +1,5 @@
-let a: number = 1;
-let b: number = 2;
+let a: number = 123;
+let b: number = 526;
 
 [a, b] = [b, a];
 
