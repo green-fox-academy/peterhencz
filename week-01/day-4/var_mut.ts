@@ -59,12 +59,12 @@ let hresult: boolean = (h % 11) == 0;
     console.log(hresult);
 
 
-// for the i task i've two version, this is the first one
+// for the 'i' task i've two version, this is the first one
 
 let i1: number = 10;
 let i2: number = 3;
 let iresult: boolean = (Math.pow(i2, 2) < i1) && (i1 < Math.pow(i2, 3));
-console.log(iresult);
+    console.log(iresult);
 
 // and this is the second
 
@@ -72,5 +72,5 @@ let i1a: number = 10;
 let i2a: number = 3;
 let iresulta: boolean = (Math.pow(i2a, 2) < i1a);
 let iresulta2: boolean = (Math.pow(i2a, 3) > i1a);
-console.log(iresulta && iresulta2);
+    console.log(iresulta && iresulta2);
 
