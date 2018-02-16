@@ -1,6 +1,6 @@
 'use strict'
 
-let lineCount: number = 10;
+let lineCount: number = 18;
 let star: string = "*";
 
  
