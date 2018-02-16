@@ -21,3 +21,6 @@ if(sum === secondNumber){
         console.log(`${firstNumber} and ${secondNumber} are NOT friendly numbers`);
     }
 }
+
+
+

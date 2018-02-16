@@ -85,7 +85,8 @@ let i2: number = 3;
 let iresult: boolean = (Math.pow(i2, 2) < i1) && (i1 < Math.pow(i2, 3));
     console.log(iresult);
 
-// and this is the second (longer than the first one)
+// and
+ this is the second (longer than the first one)
 
 let i1a: number = 10;
 let i2a: number = 3;
@@ -107,3 +108,8 @@ let k: string = 'Apple';
             console.log(k);
     }
 
+    // tell if i1 is higher than i2 squared and smaller than i2 cubed (as a boolean)
+    
+    let i1: number = 10;
+    let i2: number = 3;
+    
