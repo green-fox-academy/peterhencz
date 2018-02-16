@@ -1,7 +1,7 @@
 'use strict'
 
 let lineCount: number = 10;
-let star: string = "pina";
+let star: string = "*";
 
  
 for (let n: number = 1; n <= lineCount; n++) { 
