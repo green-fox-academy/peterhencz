@@ -9,7 +9,7 @@
 let firstList : number [] = [1, 2, 3];
 let secondList: number [] = [4, 5];
 if (firstList.length > secondList.length) {
-    console.log(`${firstList}` + ' has more elements than ' + `${secondList}`)
+    console.log(`${firstList} has more elements than ${secondList}`)
 } else {
-    console.log(`${secondList}` + ' has more elements than ' + `${firstList}`)
+    console.log(`${secondList} has more elements than ${firstList}`)
 }
