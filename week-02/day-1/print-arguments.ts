@@ -7,7 +7,7 @@
 
 
 function printer(anything: any[]): string {
-    return anything.join(' béla ');
+    return anything.join(' x ');
 }
 
 console.log(printer(['szia' , 'jo reggelt', 263678534798542, 'mittudomen']));
