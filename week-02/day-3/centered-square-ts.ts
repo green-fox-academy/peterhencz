@@ -17,6 +17,7 @@ let squareSize: number = parseInt(prompt('Size of you square (in px): '));
 
 let squareColor = prompt('Color of your square: '));
 
+// the magic
 
 ctx.fillStyle = squareColor;
 ctx.fillRect(centerx - (squareSize/2), centery - (squareSize/2), squareSize, squareSize);
