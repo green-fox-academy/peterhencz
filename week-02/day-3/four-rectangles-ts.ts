@@ -7,6 +7,8 @@ const ctx = canvas.getContext('2d');
 // Draw four different size and color rectangles.
 // Avoid code duplication.
 
+// be kell integerre huzni a random erteket, hogy megszexibb legyen
+
 function drawRect(string) { 
     let splitted: string[] = rectAttr.split (',',3);
     let sizeX : number = parseInt(splitted[0]); 
