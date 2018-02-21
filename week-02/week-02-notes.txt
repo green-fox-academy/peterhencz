@@ -1,0 +1,15 @@
+// DRAWING
+
+let canvas = document.getElementById('canvas');
+let ctx = canvas.getContext('2d');
+
+
+    canvas.width = canvas.scrollWidth;
+    canvas.height = canvas.scrollHeight;
+    
+// circle
+
+ctx.beginPath();
+    ctx.arc(75, 75, 50, 0, Math.PI * 2, true);
+
+    
