@@ -29,11 +29,12 @@ function goToCenter(x : number, y : number) {
 }
 
 for (let i: number = 1; i <= 3; i++) {
-    x = parseInt(prompt('Mennyi az x?'));
-    y = parseInt(prompt('Mennyi az y?'));
+    x = parseInt(prompt(`Mennyi az x${i}?`));
+    y = parseInt(prompt(`Mennyi az y${i}?`));
     goToCenter(x, y);
 
 }
+
 /*
 
 goToCenter(parseInt(myX),10);
