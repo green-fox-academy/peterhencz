@@ -25,20 +25,3 @@ for (let i = 0; i<4; i++) {
 
 }
 
-
-
-
-/*
-let positionx = getRandomInt(canvas.scrollWidth-rectSizeX);
-
-
-
-ctx.fillStyle = rectColor;
-ctx.fillRect(300, 100, rectSizeA, rectSizeA);
-
-// random number 
-
-function getRandomInt(max) {
-    return Math.floor(Math.random() * Math.floor(max));
-  }
-*/
