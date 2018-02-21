@@ -9,8 +9,11 @@ const ctx = canvas.getContext('2d');
 let centerx: number = canvas.scrollWidth/2;
 let centery: number = canvas.scrollHeight/2;
 let squareSize: number = parseInt(prompt('Size of you square (in px): '));
+let squareColor = prompt('Color of your square: '));
 
-ctx.fillStyle = 'pink';
+
+// ctx.fillStyle = (`${squareColor}`);
+ctx.fillStyle = squareColor;
 ctx.fillRect(centerx - (squareSize/2), centery - (squareSize/2), squareSize, squareSize);
 
 
