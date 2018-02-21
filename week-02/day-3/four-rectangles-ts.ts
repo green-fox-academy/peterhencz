@@ -21,7 +21,6 @@ function drawRect(string) {
 
 for (let i = 0; i<4; i++) {
     let rectAttr = prompt(`Yo! Please costumize your ${i+1}. rectangle like : "width, heigth, color" : `);
-
     drawRect(rectAttr);
 
 }
