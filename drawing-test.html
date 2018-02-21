@@ -1,0 +1,168 @@
+<!DOCTYPE>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+<title>CANVAS</title>
+    </head>
+    <body>
+        <canvas id='canvas' style='border: 1px solid; width: 1000px; height: 1000px;'>
+            Sorry, your browser sucks.
+        </canvas>
+
+        <script>
+        
+        var canvas = document.getElementById('canvas');
+        canvas.width = canvas.scrollWidth;
+        canvas.height = canvas.scrollHeight;
+
+        var ctx = canvas.getContext('2d');
+           
+            //gradient main
+
+        var grd=ctx.createLinearGradient(0, 0, 1000, 0);
+            grd.addColorStop(0,"#7c5b99");
+            grd.addColorStop(1,"#ff5f54");
+            ctx.fillStyle=grd;
+            ctx.fillRect(0, 0, 1000, 1000);
+
+            // gradient footer
+            grd=ctx.createLinearGradient(700, 120, 0, 1500);
+            grd.addColorStop(0,"#e51000");
+            grd.addColorStop(1,"#95cde2");
+            ctx.fillStyle=grd;
+            ctx.fillRect(42, 780, 1000, 10);
+
+            grd=ctx.createLinearGradient(700, 120, 0, 1500);
+            grd.addColorStop(0,"#e51000");
+            grd.addColorStop(1,"#95cde2");
+            ctx.fillStyle=grd;
+            ctx.fillRect(32, 820, 1000, 10);
+
+            //gradient up
+
+        var grd=ctx.createLinearGradient(0, 0, 800, 0);
+            grd.addColorStop(0,"#ffbeaf");
+            grd.addColorStop(1,"#eac5df");
+            ctx.fillStyle=grd;
+            ctx.fillRect(300, 60, 600, 500);
+
+            //gradient down
+
+        var grd=ctx.createLinearGradient(100, 200, 900, 0);
+            grd.addColorStop(0,"#edc4bb");
+            grd.addColorStop(1,"#e5cede");
+            ctx.fillStyle=grd;
+            ctx.fillRect(300, 460, 600, 400);
+
+            ctx.strokeStyle = '#50ed58';    
+            ctx.beginPath();
+            ctx.moveTo(80, 945);
+            ctx.bezierCurveTo(270, 190, 20, 100, 120, 70);
+            ctx.stroke();
+
+            // gradient footer
+            grd=ctx.createLinearGradient(700, 120, 0, 1500);
+            grd.addColorStop(0,"#e51000");
+            grd.addColorStop(1,"#95cde2");
+            ctx.fillStyle=grd;
+            ctx.fillRect(12, 800, 1000, 10);
+
+            // gradient footer
+            grd=ctx.createLinearGradient(100, 120, 800, 100);
+            grd.addColorStop(0,"#8398c4");
+            grd.addColorStop(1,"#7cbabc");
+            ctx.fillStyle=grd;
+            ctx.fillRect(100, 980, 907, 18);
+
+
+            // gradient footer
+            grd=ctx.createLinearGradient(700, 120, 0, 1500);
+            grd.addColorStop(0,"#e51000");
+            grd.addColorStop(1,"#95cde2");
+            ctx.fillStyle=grd;
+            ctx.fillRect(402, 870, 100, 10);
+
+            
+
+
+            // abstract up
+            
+            ctx.fillStyle = '#c5ccd8'
+            ctx.fillRect(100, 140, 10 , 5);
+            ctx.fillRect(150, 140, 3 , 60);
+            ctx.fillRect(200, 140, 8 , 90);
+            ctx.fillRect(250, 140, 2 , 120);
+            
+            //abstract down
+
+            ctx.fillStyle = '#8e9bb2'
+            ctx.fillRect(100, 200, 6 , 120);
+            ctx.fillRect(150, 230, 7 , 90);
+            ctx.fillRect(200, 260, 5 , 60);
+            ctx.fillRect(250, 315, 10 , 5);
+            
+            //main
+            /*
+            ctx.fillStyle = '#d0d2e2'
+            ctx.fillRect(250, 760, 100, 100);
+            ctx.fillStyle = '#ffda91'
+            ctx.fillRect(350, 760, 100, 100);
+            ctx.fillStyle = '#d5dee5'
+            ctx.fillRect(450, 760, 100, 100);
+            ctx.fillStyle = '#dce5ed'
+            ctx.fillRect(550, 765, 100, 100);   
+           */
+
+            // gradien small
+            
+        var grd=ctx.createLinearGradient(100, 100, 800, 0);
+            grd.addColorStop(0,"#eac5df");
+            grd.addColorStop(1,"#e5cede");
+            ctx.fillStyle=grd;
+            ctx.fillRect(700, 300, 100, 100);
+
+            //skretches
+
+            ctx.strokeStyle = '#ff5901';    
+            ctx.beginPath();
+            ctx.moveTo(605, 245);
+            ctx.bezierCurveTo(600, 360, 420, 420, 240, 704);
+            ctx.stroke();
+
+            ctx.strokeStyle = '#ff5901';    
+            ctx.beginPath();
+            ctx.moveTo(780, 445);
+            ctx.bezierCurveTo(670, 400, 420, 640, 790, 780);
+            ctx.stroke();
+            
+            
+
+            // stroke
+            var grd=ctx.createLinearGradient(0,0,820,200);
+            grd.addColorStop("0","#d0d2e2");
+            grd.addColorStop("0.3","#d0d2e2");
+            //grd.addColorStop("0.4","#ffda91");  
+            grd.addColorStop("0.47","#f9cff1");              grd.addColorStop("1.0","#9ca8d8");
+            ctx.strokeStyle = grd;
+            ctx.lineWidth=2;
+            ctx.strokeRect(80, 180, 420 , 420);
+
+        
+/*
+            ctx.strokeStyle = grd;
+            ctx.lineWidth=12;
+            ctx.strokeRect(90, 680, 60 , 60);
+
+
+            ctx.strokeStyle = grd;
+            ctx.lineWidth=12;
+            ctx.strokeRect(90, 760, 60 , 60);
+
+
+            ctx.strokeStyle = '#ffe5e5'; 
+            ctx.lineWidth=1;
+            ctx.strokeRect(70, 780, 160 , 60);
+  */
+  </script>
+    </body>
+</html>
