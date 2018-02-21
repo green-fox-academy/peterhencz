@@ -7,9 +7,23 @@ let ctx = canvas.getContext('2d');
     canvas.width = canvas.scrollWidth;
     canvas.height = canvas.scrollHeight;
     
+
 // circle
 
 ctx.beginPath();
     ctx.arc(75, 75, 50, 0, Math.PI * 2, true);
 
-    
+/ random colored style
+
+ctx.fillStyle = '#'+(Math.random()*0xFFFFFF<<0).toString(16);
+
+
+/ random number to integer
+
+Math.Random : random number between 0 - 1;
+Math.Floor makes an integer
+
+function getRandomInt(max) {
+    return Math.floor(Math.random() * Math.floor(max));
+  }
+
