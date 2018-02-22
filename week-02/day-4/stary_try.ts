@@ -28,11 +28,10 @@ let grds = ctx.createLinearGradient(canvas.scrollWidth/2, 0, canvas.scrollWidth/
 
 function drawStars(x,y) {  
     ctx.fillStyle = ctx.fillStyle = "rgba("+ (237) + "," + (199) + "," + (11)+ "," + (i * 0.025) + ")";
-    ctx.fillRect(x, y, (0.01 * i), (0.010 * i));
+    ctx.fillRect(x, y, (0.012 * i), (0.012 * i));
 
 }
 
-// stars
 
 for (let i = 1; i<=135; i++) {
     let x: number = (Math.random() * (canvas.scrollWidth - 5));  
