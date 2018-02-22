@@ -27,7 +27,7 @@ function drawSquare(x : number, y : number) {
 // 3 sqrs with random starting positions inside the borders
 
 for (let i = 1; i<=3; i++) {
-    let x: number = (Math.random() * (canvas.scrollHeight - 50));  
+    let x: number = (Math.random() * (canvas.scrollWidth - 50));  
     let y: number = (Math.random() * (canvas.scrollHeight - 50));
     drawSquare(x,y);
 }
