@@ -11,28 +11,25 @@ const ctx = canvas.getContext('2d');
 
 //  be kell integerre huzni a random erteket, hogy megszexibb legyen
 
-/*
 
-    function getRandomInt(max) {
+function getRandomInt(max) {
     return Math.floor(Math.random() * Math.floor(max));
-    }
-
-*/
-
+}
 
 function drawRect(string) { 
     let splitted: string[] = rectAttr.split (',',3);
     let sizeX : number = parseInt(splitted[0]); 
     let sizeY: number = parseInt(splitted[1]);
     let colour: string = splitted[2];
-    let posX: number = (Math.random() * (canvas.scrollWidth - sizeX));
-    let posY: number = (Math.random() * (canvas.scrollHeight - sizeY));
+    let posX: number = getRandomInt(canvas.scrollWidth - sizeX);
+    let posY: number = getRandomInt(canvas.scrollHeight  - sizeY);
     ctx.fillStyle = colour;
     ctx.fillRect(posX, posY, sizeX, sizeY);
+
 }
 
 
-for (let i = 0; i<4; i++) {
+for (let i = 1; i<=4; i++) {
     let rectAttr = prompt(`Yo! Please costumize your ${i+1}. rectangle like : "width, heigth, color" : `);
     drawRect(rectAttr);
 
