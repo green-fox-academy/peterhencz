@@ -27,6 +27,7 @@ function getRandomInt(max) {
     return Math.floor(Math.random() * Math.floor(max));
   }
 
+
 // színkeveréses módszerek:
 
 ctx.fillStyle = 'rgba(255, 255, 255, 1/(i)';
