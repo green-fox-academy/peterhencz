@@ -17,7 +17,7 @@ const ctx = canvas.getContext('2d');
     - write one loop for the craters ( - crater positions inside the moon area
                                        - crater sizes between ? and ?  
                                        - gradient colorstop positions  )
-    - add clouds, planes and angels
+                                       
     - set canvas-free values with canvas.scrollWidth & canvas.scrollHeight
     - milky way oriented stars
     - add clouds, planes and angels
