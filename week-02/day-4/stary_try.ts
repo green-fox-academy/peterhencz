@@ -23,7 +23,7 @@ const ctx = canvas.getContext('2d');
     - milky way oriented stars (left & right side?) (aron did it!)
     - add clouds, planes and angels
 
-    */
+*/
 
 // sky
 
