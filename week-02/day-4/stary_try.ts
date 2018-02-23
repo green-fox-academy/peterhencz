@@ -14,13 +14,13 @@ const ctx = canvas.getContext('2d');
 /*  tasks for the weekend:
                         
     - fix the rng parts
-    - change colors to hsla
+    - change colors to hsla (almost done)
     - write one loop for the craters ( - crater positions inside the moon area
                                        - crater sizes between ? and ?  
                                        - gradient colorstop positions  )
                                        
     - set canvas-free values with canvas.scrollWidth & canvas.scrollHeight
-    - milky way oriented stars (left & right side?)
+    - milky way oriented stars (left & right side?) (aron did it!)
     - add clouds, planes and angels
 
     */
@@ -111,8 +111,8 @@ function drawMoonCrater1() {
     ctx.beginPath();
     ctx.arc(405, 108, 9.6, 0, Math.PI * 2, true);
     let grd = ctx.createLinearGradient(canvas.scrollWidth*1.5, canvas.scrollHeight/2, canvas.scrollWidth/4, canvas.scrollWidth);
-    grd.addColorStop(0.26, 'hsla(200, 13%, 37%, 1)');
-    grd.addColorStop(0.51, 'hsla(201, 23%, 17%, 1)');
+    grd.addColorStop(0.2, 'hsla(200, 13%, 37%, 1)');
+    grd.addColorStop(0.48, 'hsla(201, 23%, 17%, 1)');
     ctx.fillStyle = grd;
     ctx.fill();
  
@@ -131,7 +131,7 @@ function drawMoonCrater2() {
 
 function drawMoonCrater3() {  
     ctx.beginPath();
-    ctx.arc(380, 140, 7, 0, Math.PI * 2, true); 
+    ctx.arc(380, 140, 8, 0, Math.PI * 2, true); 
     let grd = ctx.createLinearGradient(canvas.scrollWidth*1.5, canvas.scrollHeight/2, canvas.scrollWidth/4, canvas.scrollWidth);
     grd.addColorStop(0.5065, 'hsla(200, 13%, 37%, 1)');
     grd.addColorStop(0.53, 'hsla(201, 23%, 17%, 1)');
@@ -142,7 +142,7 @@ function drawMoonCrater3() {
 
 function drawMoonCrater4() {  
     ctx.beginPath();
-    ctx.arc(380, 113, 3, 0, Math.PI * 2, true); 
+    ctx.arc(380, 113, 4, 0, Math.PI * 2, true); 
     let grd = ctx.createLinearGradient(canvas.scrollWidth*1.5, canvas.scrollHeight/2, canvas.scrollWidth/4, canvas.scrollWidth);
     grd.addColorStop(0.48, 'hsla(200, 13%, 37%, 1)');
     grd.addColorStop(0.51, 'hsla(201, 23%, 17%, 1)');
@@ -155,8 +155,8 @@ function drawMoonCrater5() {
     ctx.beginPath();
     ctx.arc(424, 130, 7, 0, Math.PI * 2, true); 
     let grd = ctx.createLinearGradient(canvas.scrollWidth*1.5, canvas.scrollHeight/2, canvas.scrollWidth/4, canvas.scrollWidth);
-    grd.addColorStop(0.43, 'hsla(200, 13%, 37%, 1)');
-    grd.addColorStop(0.45, 'hsla(201, 23%, 17%, 1)');
+    grd.addColorStop(0.41, 'hsla(200, 13%, 37%, 1)');
+    grd.addColorStop(0.46, 'hsla(201, 23%, 17%, 1)');
     ctx.fillStyle = grd;
     ctx.fill();
  
