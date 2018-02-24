@@ -11,7 +11,7 @@ const ctx = canvas.getContext('2d');
 //  - The stars should have random color (some shade of grey)
 
 
-/*  tasks for the weekend:
+/*  tasks:
                         
     - fix the rng parts
     - change colors to hsla (almost done)
@@ -19,7 +19,7 @@ const ctx = canvas.getContext('2d');
                                        - crater sizes between ? and ?  
                                        - gradient colorstop positions  )
                                        
-    - set canvas-free values with canvas.scrollWidth & canvas.scrollHeight
+    - set canvas-free values 
     - milky way oriented stars (left & right side?) (aron did it!)
     - add clouds, planes and angels
 
@@ -37,6 +37,7 @@ let grds = ctx.createLinearGradient(0, canvas.scrollHeight*0.4, canvas.scrollWid
 
 // aron fele csillageloszlas - right side
 
+function rightStars() {}
 for (let i = 1; i<= 1000; i++) {
     let x: number = (canvas.scrollWidth)/0.004/(0.4*(i*5))+172;
     let y: number = ((Math.random() * (canvas.scrollHeight)));
@@ -51,8 +52,10 @@ for (let i = 1; i<= 1000; i++) {
         }
     }
 }
+
 // aron fele csillageloszlas - left side
 
+function leftStars() {
 for (let i = 1; i<=1000; i++) {
     let x: number = (canvas.scrollWidth)*3/(6/(i*0.00032))+150;
     let y: number = ((Math.random() * (canvas.scrollHeight)));
@@ -67,10 +70,11 @@ for (let i = 1; i<=1000; i++) {
         }
     }
 }
-
+}
 
     // stars - third layer (for full canvas)
 
+function fullCanvasStars() {  
 for (let i = 1; i<=1000; i++) {
     let x: number = ((Math.random() * (canvas.scrollWidth)));
     let y: number = ((Math.random() * (canvas.scrollHeight)));
@@ -80,7 +84,7 @@ for (let i = 1; i<=1000; i++) {
         }
      drawStars(x,y);
 }
-
+}
 
 // moon
 
@@ -162,6 +166,9 @@ function drawMoonCrater5() {
  
 }
 
+rightStars();
+leftStars();
+fullCanvasStars();
 drawMoonGrd();
 drawMoon();
 drawMoonCrater1();
