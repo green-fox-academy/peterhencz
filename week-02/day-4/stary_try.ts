@@ -37,8 +37,8 @@ let grds = ctx.createLinearGradient(0, canvas.scrollHeight*0.4, canvas.scrollWid
 
 // aron fele csillageloszlas - right side
 
-for (let i = 1; i<= 1200; i++) {
-    let x: number = (canvas.scrollWidth)/0.002/(0.4*(i*5))+140;
+for (let i = 1; i<= 1000; i++) {
+    let x: number = (canvas.scrollWidth)/0.004/(0.4*(i*5))+172;
     let y: number = ((Math.random() * (canvas.scrollHeight)));
     for (let j: number = 0; j < 100; j++) {
         if (j * 4 < y && ((j + 1) * 4) > y) {     
@@ -53,7 +53,7 @@ for (let i = 1; i<= 1200; i++) {
 }
 // aron fele csillageloszlas - left side
 
-for (let i = 1; i<=1200; i++) {
+for (let i = 1; i<=1000; i++) {
     let x: number = (canvas.scrollWidth)*3/(6/(i*0.00032))+150;
     let y: number = ((Math.random() * (canvas.scrollHeight)));
     for (let j: number = 0; j < 100; j++) {
