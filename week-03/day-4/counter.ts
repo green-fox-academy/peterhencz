@@ -4,12 +4,12 @@
 
 
 
-function countDown(num: number) {
-  if (num <= 1) {
+function countDown(i: number) {
+  if (i <= 1) {
     return 1;
   }
   else {
-    return countDown(num -1);
+    return countDown(i - 1);
   }
 }
 console.log(countDown(10));
