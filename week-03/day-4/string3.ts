@@ -1,9 +1,7 @@
 'use strict'
 
-
 // Given a string, compute recursively a new string where all the
 // adjacent chars are now separated by a '*'.
-
 
 function separatedByAStar(string: string) {
   if (string.charAt(string.length-2) == '*') {
