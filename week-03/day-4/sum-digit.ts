@@ -6,10 +6,10 @@
 
 
 function sumDigit(i: number) {
-  if (i<= 1) {
+  if (i < 1) {
     return 0;
   } else {
     return i % 10 + sumDigit((i - i % 10) / 10);
   }
 }
-console.log(sumDigit(418))
+console.log(sumDigit(19634))
