@@ -5,11 +5,11 @@
 // divide (/) by 10 removes the rightmost digit (126 / 10 is 12).
 
 
-function sumDigit(num: number) {
-  if (num <= 1) {
+function sumDigit(i: number) {
+  if (i<= 1) {
     return 0;
   } else {
-    return num % 10 + sumDigit((num - num % 10) / 10);
+    return i % 10 + sumDigit((i - i % 10) / 10);
   }
 }
 console.log(sumDigit(418))
