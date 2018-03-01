@@ -7,9 +7,6 @@ function power(i: number, j: number) {
   if (j === 0) {
     return 1;
   }
-    else { 
-    return i * power(i, j - 1);
-  }
+  return i * power(i, j - 1);
 }
-
-console.log(power(5, 0))
+console.log(power(4, 3))
