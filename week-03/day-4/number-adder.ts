@@ -2,12 +2,12 @@
 
 // Write a recursive function that takes one parameter: n and adds numbers from 1 to n.
 
-function countDown(num: number) {
-  if (num = num) {
-    return num;
+function countDown(i: number) {
+  if (i === i) {
+    return i;
   }
   else {
-    return countDown(num + 1);
+    return countDown(i + 1);
   }
 }
-console.log(countDown(0));
+console.log(countDown(10));
