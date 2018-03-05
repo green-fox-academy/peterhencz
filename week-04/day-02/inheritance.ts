@@ -5,10 +5,16 @@ class Person {
   private age: number = 30;
   private gender: string = 'female';
 
-  constructor(name: string, age: number, gender: string) {
-    this.name = name;
-    this.age = age;
-    this.gender = gender;
+  constructor(name?: string, age?: number, gender?: string) {
+    if (name !== undefined) {
+      this.name = name;
+    }
+    if (age !== undefined) {
+      this.age = age;
+    }
+    if (gender !== undefined) {
+      this.gender = gender;
+    }
   }
   introduce() {
     console.log(`Hi, I'm ${this.name}, a ${this.age} year old ${this.gender}.`);
@@ -17,19 +23,29 @@ class Person {
     console.log('My goal is: Live for the moment.');
   }
 }
-class Students {
+
+class Student {
   private name: string = 'Jane Doe';
   private age: number = 30;
   private gender: string = 'female';
   private previousOrganization: string = 'The School of Life';
   private skippedDays: number = 0;
 
-  constructor(name: string, age: number, gender: string, previousOrganization: string) {
-    this.name = name;
-    this.age = age;
-    this.gender = gender;
-    this.previousOrganization = previousOrganization;
+  constructor(name?: string, age?: number, gender?: string, previousOrganization?: string) {
+    if (name !== undefined) {
+      this.name = name;
+    }
+    if (age !== undefined) {
+      this.age = age;
+    }
+    if (gender !== undefined) {
+      this.gender = gender;
+    }
+    if (previousOrganization !== undefined) {
+      this.previousOrganization = previousOrganization;
+    }
   }
+
   introduce() {
     console.log(`Hi, I'm ${this.name}, a ${this.age} year old ${this.gender} from ${this.previousOrganization} who skipped ${this.skippedDays} days from the course already.`);
   }
@@ -47,11 +63,20 @@ class Mentor {
   private gender: string = 'female';
   private level: string = 'intermediate';
 
-  constructor(name: string, age: number, gender: string, level: string) {
-    this.name = name;
-    this.age = age;
-    this.gender = gender;
-    this.level = level;
+  constructor(name?: string, age?: number, gender?: string, level?: string) {
+    if (name !== undefined) {
+      this.name = name;
+    }
+    if (age !== undefined) {
+      this.age = age;
+    }
+    if (gender !== undefined) {
+      this.gender = gender;
+    }
+    if (level !== undefined) {
+      this.level = level;
+    }
+
   }
   introduce() {
     console.log(`Hi, I'm ${this.name}, a ${this.age} year old ${this.gender} ${this.level} mentor.`);
@@ -68,17 +93,25 @@ class Sponsor {
   private company: string = '';
   private hiredStudents: number = 0;
 
-  constructor(name: string, age: number, gender: string, company: string) {
-    this.name = name;
-    this.age = age;
-    this.gender = gender;
-    this.company = company;
+  constructor(name?: string, age?: number, gender?: string, company?: string) {
+    if (name !== undefined) {
+      this.name = name;
+    }
+    if (age !== undefined) {
+      this.age = age;
+    }
+    if (gender !== undefined) {
+      this.gender = gender;
+    }
+    if (company !== undefined) {
+      this.company = company;
+    }
   }
   introduce() {
     console.log(`Hi, I'm ${this.name}, a ${this.age} year old ${this.gender} who represents ${this.company} and hired ${this.hiredStudents} students so far.`);
   }
-  hire(hiredStudents) {
-    this.hiredStudents === hiredStudents++;
+  hire() {
+    this.hiredStudents++;
   }
   getGoal() {
     console.log('"Educate brilliant junior software developers.');
@@ -99,7 +132,9 @@ people.push(gandhi);
 let mentor = new Mentor();
 people.push(mentor);
 let sponsor = new Sponsor();
+people.push(sponsor);
 let elon = new Sponsor('Elon Musk', 46, 'male', 'SpaceX');
+people.push(elon);
 
 student.skipDays(3);
 
