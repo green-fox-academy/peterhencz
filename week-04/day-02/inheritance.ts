@@ -52,8 +52,8 @@ class Student {
   getGoal() {
     console.log('Be a junior software developer.');
   }
-  skipDays(numberOfDay: number) {
-    this.skippedDays === numberOfDay++;
+  skipDays(numberOfDays: number) {
+    this.skippedDays += numberOfDays;
   }
 }
 
