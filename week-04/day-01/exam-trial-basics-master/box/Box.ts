@@ -11,13 +11,11 @@ class Cuboid {
   private z: number;
   public no: string = '';
 
-
   constructor(x: number, y: number, z: number, no: string) {
     this.x = x;
     this.y = y;
     this.z = z;
     this.no = no;
-  
   }
 
   get sizeA(): number {
