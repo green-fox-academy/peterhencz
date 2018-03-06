@@ -23,10 +23,6 @@ class Person {
 }
 
 class Student extends Person {
-
-  name: string;
-  age: number;
-  gender: string;
   previousOrganization: string;
   skippedDays: number = 0;
 
@@ -49,10 +45,6 @@ class Student extends Person {
 }
 
 class Mentor extends Person{
-
-  name: string;
-  age: number;
-  gender: string;
   level: string;
 
   constructor(name?: string, age?: number, gender?: string, level: string = 'intermediate') {
@@ -70,10 +62,6 @@ class Mentor extends Person{
 }
 
 class Sponsor extends Person {
-
-  name: string;
-  age: number;
-  gender: string;
   company: string;
   hiredStudents: number = 0;
 
@@ -95,7 +83,32 @@ class Sponsor extends Person {
   }
 }
 
+class Cohort {
+  cohortName : string;
+  students: string [];
+  mentors : string [];
+
+  constructor(cohortName?: string, students: string[] = [], mentors: string[] = []) {
+    this.cohortName = cohortName;
+    this.students = students;
+    this.mentors = mentors;
+  }
+
+  addStudent(Student) {
+    this.students.push(Student);
+  }
+
+ addMentor(Mentor) {
+   this.mentors.push(Mentor);
+ }
+  
+info() {
+    console.log(`The ${this.cohortName} cohort has ${this.students.length} and ${this.students.length}.`)
+  }
+}
+
 let people = [];
+
 let mark = new Person('Mark', 46, 'male');
 people.push(mark);
 let jane = new Person();
@@ -112,7 +125,6 @@ let sponsor = new Sponsor();
 people.push(sponsor);
 let elon = new Sponsor('Elon Musk', 46, 'male', 'SpaceX');
 people.push(elon);
-
 student.skipDays(3);
 
 for (let i = 0; i < 6; i++) {
@@ -123,7 +135,15 @@ for (let i = 0; i < 4; i++) {
   sponsor.hire();
 }
 
-for (let person of people) {
+for (let person of people) { // what is this between the brackets?
   person.introduce();
   person.getGoal();
 }
+
+
+let awesome = new Cohort('AWESOME');
+awesome.addStudent(student);
+awesome.addStudent(john);
+awesome.addMentor(mentor);
+awesome.addMentor(gandhi);
+awesome.info();
