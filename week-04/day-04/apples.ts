@@ -2,12 +2,13 @@
 
 'use strict'
 
-class Fruits {
+export class Fruits {
   fruit: string;
 
-  getApple() {
-    return 'apple';
+  getApple(): string {
+   return 'red apple'
   }
 }
 
-
+let apple = new Fruits;
+console.log(apple.getApple());
