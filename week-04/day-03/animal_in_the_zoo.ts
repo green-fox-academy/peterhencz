@@ -12,42 +12,42 @@ interface Flyable {
 
 abstract class Animal {
 
-	name: string;
-	age: number = 0;
-	species: string;
+  name: string;
+  age: number = 0;
+  species: string;
 
-	constructor(name:string, age: number) {
-		this.name = name;
-		this.age = age;
+  constructor(name:string, age: number) {
+    this.name = name;
+    this.age = age;
 
-	}
+  }
 
 getName(): string {
-		return this.name;
-	}
+    return this.name;
+  }
 
-	breed() {}
+  breed() {}
 }
 
 class Reptile extends Animal {
 
-	breed(): string {
-		return 'laying eggs';
-	}
+  breed(): string {
+    return 'laying eggs';
+  }
 }
 
 class Mammal extends Animal {
 
-	breed(): string {
-		return 'pushing miniature versions out.';
-	}
+  breed(): string {
+    return 'pushing miniature versions out.';
+  }
 }
 
 export class Bird extends Animal implements Flyable {
 
-	breed(): string {
-		return 'laying eggs.';
-	}
+  breed(): string {
+    return 'laying eggs.';
+  }
 
 
   land(): any {
