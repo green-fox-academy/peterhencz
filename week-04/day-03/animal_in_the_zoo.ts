@@ -3,6 +3,13 @@
 
 'use strict'
 
+interface Flyable {
+  land();
+  fly();
+  takeOff();
+}
+
+
 abstract class Animal {
 
 	name: string;
@@ -36,11 +43,24 @@ class Mammal extends Animal {
 	}
 }
 
-export class Bird extends Animal {
+export class Bird extends Animal implements Flyable {
 
 	breed(): string {
 		return 'laying eggs.';
 	}
+
+
+  land(): any {
+     return `CSIPP`;
+  }
+  
+  fly(): any {
+     return `CSIPP CSIPP`;
+  }
+
+  takeOff(): any {
+     return `CSIPP CSIPP CSIPP CSIRIPP`;
+  }
 }
 
 
@@ -52,3 +72,4 @@ console.log('\n' + "How do you breed?" + '\n');
 console.log("A " + myReptile.getName() + " is breeding by " + myReptile.breed());
 console.log("A " + mammal.getName() + " is breeding by " + mammal.breed());
 console.log("A " + bird.getName() + " is breeding by " + bird.breed() + '\n');
+
