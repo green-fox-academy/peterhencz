@@ -19,10 +19,6 @@ getName(): string {
 		return this.name;
 	}
 
-	getName(): string {
-		return this.name;
-	}
-
 	breed() {}
 }
 
@@ -40,7 +36,7 @@ class Mammal extends Animal {
 	}
 }
 
-class Bird extends Animal {
+export class Bird extends Animal {
 
 	breed(): string {
 		return 'laying eggs.';
