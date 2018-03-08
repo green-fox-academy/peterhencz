@@ -6,7 +6,7 @@
 abstract class Animal {
 
 	name: string;
- age: number = 0;
+	age: number = 0;
 	species: string;
 
 	constructor(name:string, age: number) {
