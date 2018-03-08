@@ -36,7 +36,6 @@ abstract class Vehicle {
 		this.distance = 0;
 		this.altitude = 0;
 	}
-
 }
 
 class Helicopter extends Vehicle implements Flyable {
