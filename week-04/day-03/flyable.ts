@@ -24,45 +24,45 @@ interface Flyable {
 
 
 abstract class Vehicle {
-	type: string;
-	distanceFromDestination: number;
-	altitude: 0;
-	distance: 0;
+  type: string;
+  distanceFromDestination: number;
+  altitude: 0;
+  distance: 0;
 
-	constructor(type: string, distanceFromDestination?: number, altitude?: number, distance?: number) {
+  constructor(type: string, distanceFromDestination?: number, altitude?: number, distance?: number) {
 
-		this.type = type;
-		this.distanceFromDestination = distanceFromDestination;
-		this.distance = 0;
-		this.altitude = 0;
-	}
+    this.type = type;
+    this.distanceFromDestination = distanceFromDestination;
+    this.distance = 0;
+    this.altitude = 0;
+  }
 }
 
 class Helicopter extends Vehicle implements Flyable {
-		
-	land(): any {
-		this.altitude--
-		if (this.distanceFromDestination == 0) {
-				console.log(`${this.type} reached the destination.`);
-				return
-			}
-		else {
-			return 'MAYDAY MAYDAY';
-		}
- 	}
-	
-	fly(): any {
-		this.distance++;
-		this.distanceFromDestination--;
-		return
-	}
+    
+  land(): any {
+    this.altitude--
+    if (this.distanceFromDestination == 0) {
+        console.log(`${this.type} reached the destination.`);
+        return
+      }
+    else {
+      return 'MAYDAY MAYDAY';
+    }
+  }
+  
+  fly(): any {
+    this.distance++;
+    this.distanceFromDestination--;
+    return
+  }
 
-	takeOff(): any { 
-		this.altitude++  
-		this.distance++
-		this.distanceFromDestination--
-		return 'Please fasten seat belt';
-	}
+  takeOff(): any { 
+    this.altitude++  
+    this.distance++
+    this.distanceFromDestination--
+    return 'Please fasten seat belt';
+  }
 }
 
 
