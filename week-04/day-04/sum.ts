@@ -1,11 +1,7 @@
-
-
 'use strict'
-
 
 export class SumClass {
   private list: number[];
-
 
   constructor(list: number[]) {
     this.list = list;
