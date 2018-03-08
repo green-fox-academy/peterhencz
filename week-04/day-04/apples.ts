@@ -3,11 +3,11 @@
 'use strict'
 
 class Fruits {
-	fruit: string;
+  fruit: string;
 
-	getApple() {
-		return 'apple';
-	}
+  getApple() {
+    return 'apple';
+  }
 }
 
 
