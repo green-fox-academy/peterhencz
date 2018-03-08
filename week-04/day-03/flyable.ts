@@ -41,10 +41,9 @@ abstract class Vehicle {
 class Helicopter extends Vehicle implements Flyable {
     
   land(): any {
-    this.altitude--
+    this.altitude--;
     if (this.distanceFromDestination == 0) {
-        console.log(`${this.type} reached the destination.`);
-        return
+        return `${this.type} reached the destination.`;
       }
     else {
       return 'MAYDAY MAYDAY';
@@ -58,16 +57,18 @@ class Helicopter extends Vehicle implements Flyable {
   }
 
   takeOff(): any { 
-    this.altitude++  
-    this.distance++
-    this.distanceFromDestination--
+    this.altitude++; 
+    this.distance++;
+    this.distanceFromDestination--;
     return 'Please fasten seat belt';
   }
 }
 
 
-let heli = new Helicopter('HellyPotter', 5);
 
+
+let heli = new Helicopter('HellyPotter', 5);
+let csorike = new Bird('Tweety', 3);
 
 console.log('\n');
 console.log(heli);
@@ -77,6 +78,7 @@ heli.fly();
 heli.fly();
 heli.fly();
 heli.fly();
+console.log(csorike);
 console.log('\n');
 console.log(heli);
 console.log('\n');
