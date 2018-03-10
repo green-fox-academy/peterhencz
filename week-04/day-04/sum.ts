@@ -1,20 +1,27 @@
+
+
+
+
 'use strict'
 
 export class SumClass {
-  private list: number[];
+  private list: any[];
 
-  constructor(list: number[]) {
+  constructor(list: any[]) {
     this.list = list;
   }
 
   sum(): any {
-    if (Array.isArray(this.list)) {
-      return this.list.reduce((a, b) => a + b, 0);
-    }
-    else {
-      return '0'
-    }
+      let sum = 0;
+      this.list.forEach((item) => {
+        if (typeof item === 'number') {
+          sum += item;
+        }
+      });
+      return sum;
   }
 }
+
+
 
 
