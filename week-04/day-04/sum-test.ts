@@ -1,3 +1,6 @@
+
+
+
 'use strict'
 
 import {test} from 'tape';
@@ -37,17 +40,17 @@ test('Test sum list with a null', t => {
   let sumTest4 = new SumClass(null);
 
   let actual = sumTest4.sum();
-  let expected = '0';
+  let expected = 0;
 
    t.equal(actual, expected);
    t.end();
 });
 
 test('Test sum list with a string', t => {
-  let sumTest4 = new SumClass(null);
+  let sumTest5 = new SumClass(['asdfasdf', 12, 'sdsfgdfg']);
 
-  let actual = sumTest4.sum();
-  let expected = '0';
+  let actual = sumTest5.sum();
+  let expected = 12;
 
    t.equal(actual, expected);
    t.end();
