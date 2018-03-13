@@ -5,11 +5,18 @@
 // It should print: ['GinGin', 'WhiskeyWhiskey', 'WineWine', 'BeerBeer']`
 
 let names: string[] = ['Gin', 'Whiskey', 'Wine', 'Beer'];
+let doubleNames: string []= []; 
+
     names.forEach(function (a: string) {
-    a = a + a
-    console.log(a)
+    doubleNames.push(a + a);
     });
+    
+console.log(doubleNames)
+
+
+
   
+
 
 
 
