@@ -1,0 +1,33 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  display: inline-block;
+}
+
+.item {
+
+/*  width: 200px;
+  height: 200px;*/
+  display: inline-block;
+}
+
+.green {
+  width: 200px;
+  height: 200px;
+  background-color: #91e589;
+}
+
+.yellow {
+  width: 200px;
+  height: 200px;
+  background-color: #f2ec4b;
+}
+
+.purple {
+  width: 200px;
+  height: 200px;
+  background-color: #d482f2;
+}
