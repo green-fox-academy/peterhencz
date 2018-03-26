@@ -1,0 +1,39 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper {
+  width: 100%;
+  margin 0 auto;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.item {
+  min-height: 100px;
+  min-width: 100px;
+}
+
+.green {
+  width: auto;
+  background-color: #4c3;
+  flex: 1;
+}
+
+.yellow {
+  width: auto;
+  background-color: #ffdd02;
+  flex: 2;
+}
+
+.purple {
+  width: auto;
+  background-color: #a33ac9;
+  flex: 1;
+}
+
