@@ -50,7 +50,6 @@ body {
   height: auto;
 }
 
-
 .yellow {
   padding: 0 10px;
   min-height: 500px;
@@ -82,7 +81,6 @@ body {
   height: 100px;
   justify-content: space-around;
   background-color: #ff0037;
-
 }
 
 .green {
@@ -92,10 +90,15 @@ body {
   background-color: #4c3;
 }
 
-.darkpurple {
+.greenboxes {
   display: flex;
   flex-direction: column;
+}
+
+.darkpurple {
   height: 40px;
   margin: 10px;
   background-color: #460072;
+  display: flex;
+  flex-direction: column;
 }
