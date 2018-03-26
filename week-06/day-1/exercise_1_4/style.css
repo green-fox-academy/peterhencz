@@ -1,0 +1,47 @@
+html{
+  height: 100%;
+}
+
+body{
+  height: 100%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+
+.container {
+  width: 300px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.item {
+  min-height: 100px;
+  min-width: 100px;
+}
+
+.green {
+  background-color: #4c3;
+  display: inline-block;
+  flex: 1;
+}
+
+.yellow {
+  background-color: #ffdd02;
+  display: inline-block;
+  flex: 2;
+}
+
+.purple {
+  background-color: #a33ac9;
+  display: inline-block;
+  flex: 1;
+}
+
+.purple{order: 2;}
+.yellow{order: 3;}
+.green{order: 1
