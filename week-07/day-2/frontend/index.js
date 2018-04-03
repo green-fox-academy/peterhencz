@@ -21,6 +21,14 @@ app.get('/doubling', (req, res) => {
   };
 });
 
+app.get('/greeter', (req, res) => {
+  const name = req.query.name || 'Stranger';
+  const name = req.query.title || 'unkown';
+  res.json({
+    welcome message: `Oh, hi there ${name}, my dear ${title}!`
+  });
+});
+
 app.listen(PORT, () => {
   console.log(`server is up on port ${PORT}`);
 });
