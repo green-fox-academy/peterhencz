@@ -33,17 +33,17 @@ function octa(numberOfSides: number, xCenter: number, yCenter: number, size: num
   // fill and stroke options
 
   let grd1 = ctx.createLinearGradient(canvas.scrollWidth * gradientAngle, 0, 0, canvas.scrollHeight);
-  grd1.addColorStop(0.6, `hsla(217, 76%, 55%, ${Math.random() * Math.random() / 8})`);
-  grd1.addColorStop(0.8, `hsla(20, 93%, 54%, ${Math.random() * Math.random() / 8})`);
+  grd1.addColorStop(0.6, `hsla(217, 76%, 55%, ${Math.random() * Math.random() / 1 })`);
+  grd1.addColorStop(0.8, `hsla(20, 93%, 54%, ${Math.random() * Math.random() / 1})`);
   ctx.lineWidth = lineWidth;
-  // ctx.strokeStyle = grd1;
-  // ctx.stroke();
-  ctx.fillStyle = grd1;
-  ctx.fill();
+  ctx.strokeStyle = grd1;
+  ctx.stroke();
+  // ctx.fillStyle = grd1;
+  // ctx.fill();
 
   // method
 
-  if (size >= 100 && lineWidth >= 0.1) {
+  if (size >= 100 && lineWidth >= 0.01) {
     octa(numberOfSides, (xCenter + (size / 2)), yCenter, size / 2, lineWidth * 0.8, gradientAngle + 1.2);
     octa(numberOfSides, xCenter - (size / 2), yCenter, size / 2, lineWidth * 0.8, gradientAngle - 1.2);
     octa(numberOfSides, xCenter, yCenter + (size / 2), size / 2, lineWidth * 0.8, gradientAngle - 1.2);
@@ -51,6 +51,6 @@ function octa(numberOfSides: number, xCenter: number, yCenter: number, size: num
 
   }
 }
-octa(numberOfSides = 4, xCenter, yCenter, size, lineWidth = 6, gradientAngle);
+octa(numberOfSides = 20, xCenter, yCenter, size, lineWidth = 3, gradientAngle);
 
 

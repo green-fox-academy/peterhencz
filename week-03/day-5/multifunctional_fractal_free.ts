@@ -4,7 +4,7 @@
 const canvas = document.querySelector('.main-canvas') as HTMLCanvasElement;
 const ctx = canvas.getContext('2d');
 
-let grdbg = ctx.createLinearGradient(canvas.scrollWidth * 1.8, 0, 0, canvas.scrollHeight);
+let grdbg = ctx.createLinearGradient(canvas.scrollWidth * 2.8, 0, 0, canvas.scrollHeight);
 grdbg.addColorStop(0.1, "hsla(31, 18%, 88%, 0.9)");
 grdbg.addColorStop(1, "hsla(41, 21%, 88%, 0.9)");
 ctx.fillStyle = grdbg;
@@ -33,7 +33,7 @@ function octa(numberOfSides: number, xCenter: number, yCenter: number, size: num
   // fill and stroke options
 
   let grd1 = ctx.createLinearGradient(canvas.scrollWidth * gradientAngle, 0, 0, canvas.scrollHeight);
-  grd1.addColorStop(0.6, `hsla(217, 76%, 55%, ${Math.random() * Math.random() / 2})`);
+    grd1.addColorStop(0.6, `hsla(217, 76%, 55%, ${Math.random() * Math.random() / 2})`);
   grd1.addColorStop(0.8, `hsla(20, 93%, 54%, ${Math.random() * Math.random() / 2})`);
   ctx.lineWidth = lineWidth;
   ctx.strokeStyle = grd1;
@@ -43,14 +43,14 @@ function octa(numberOfSides: number, xCenter: number, yCenter: number, size: num
 
   // method
 
-  if (size >= 300 && lineWidth >= 1) {
-    octa(numberOfSides / 2, (xCenter + (size / 2)), yCenter, size / 2, lineWidth * 0.8, gradientAngle + 1.2);
+  if (size >= 200 && lineWidth >= 1) {
+    octa(numberOfSides / 4, (xCenter + (size / 2)), yCenter, size / 2, lineWidth * 0.8, gradientAngle + 1.2);
     octa(numberOfSides, xCenter - (size / 2), yCenter, size / 2, lineWidth * 0.8, gradientAngle - 1.2);
     octa(numberOfSides, xCenter, yCenter + (size / 2), size / 2, lineWidth * 0.8, gradientAngle - 1.2);
     octa(numberOfSides, xCenter, yCenter - (size / 2), size / 2, lineWidth * 0.8, gradientAngle + 1.2);
 
   }
 }
-octa(numberOfSides = 8, xCenter, yCenter, size, lineWidth = 7, gradientAngle);
+octa(numberOfSides = 10, xCenter, yCenter, size, lineWidth = 14, gradientAngle);
 
 

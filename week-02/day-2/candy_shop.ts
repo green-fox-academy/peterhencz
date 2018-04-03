@@ -13,7 +13,11 @@
 let shopItems: any[] = ['Cupcake', 2, 'Brownie', false];
 
 function sweets() {
-  let realShopItems = shopItems.map((e, i) => {return e == 2 ? 'Croissant' : e == false ? 'Ice Cream' : e}
+  let realShopItems = shopItems.map((e, i) => {return e == 2 
+    ? 'Croissant' 
+    : e == false 
+      ? 'Ice Cream' 
+      : e}
     );
   return realShopItems;
 }

@@ -9,7 +9,6 @@ interface Flyable {
   takeOff();
 }
 
-
 abstract class Animal {
 
   name: string;

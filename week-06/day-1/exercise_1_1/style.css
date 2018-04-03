@@ -3,31 +3,38 @@
   padding: 0;
 }
 
+.wrapper {
+  width: 100%;
+  min-width: 1000px;
+  margin 0 auto;
+}
+
 .container {
-  display: inline-block;
+  display: flex;
 }
 
 .item {
-
-/*  width: 200px;
-  height: 200px;*/
-  display: inline-block;
+  min-height: 100px;
+  min-width: 100px;
+  flex-grow: 1;
 }
 
 .green {
-  width: 200px;
-  height: 200px;
-  background-color: #91e589;
+  width: auto;
+  background-color: #4c3;
 }
 
 .yellow {
-  width: 200px;
-  height: 200px;
-  background-color: #f2ec4b;
+  width: auto;
+  background-color: #ffdd02;
+  flex-grow: 2;
 }
 
 .purple {
-  width: 200px;
-  height: 200px;
-  background-color: #d482f2;
+  width: auto;
+  background-color: #a33ac9;
 }
+
+.purple{order: 1;}
+.yellow{order: 2;}
+.green{order: 3;}

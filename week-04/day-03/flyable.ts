@@ -22,7 +22,6 @@ interface Flyable {
   takeOff();
 }
 
-
 abstract class Vehicle {
   type: string;
   distanceFromDestination: number;
@@ -67,13 +66,14 @@ class Helicopter extends Vehicle implements Flyable {
 
 
 
-let heli = new Helicopter('HellyPotter', 5);
+let heli = new Helicopter('Helicopter', 5);
 let csorike = new Bird('Tweety', 3);
 
 console.log('\n');
 console.log(heli);
 console.log('\n');
 console.log(heli.takeOff());
+console.log('\n');
 heli.fly();
 heli.fly();
 heli.fly();
@@ -81,6 +81,8 @@ heli.fly();
 console.log(csorike);
 console.log('\n');
 console.log(heli);
+console.log('\n');
+console.log(csorike.takeOff());
 console.log('\n');
 console.log(heli.land());
 console.log('\n');
