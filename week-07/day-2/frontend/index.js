@@ -36,7 +36,19 @@ app.get('/greeter', (req, res) => {
   };
 });
 
+app.get('/appenda/:appendable', (req, res) => {
+  if (req.params.appendable === undefined) {
+    res.status(404);
+    res.json({
+      message: '404',
+    });
+  } else {
+    res.json({
+      message: req.params.appendable + 'a',
+    })  
+  }
+});
+
 app.listen(PORT, () => {
   console.log(`server is up on port ${PORT}`);
 });
-
