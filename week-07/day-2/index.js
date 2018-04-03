@@ -46,7 +46,7 @@ app.get('/api/mentors/:mentorId', (req, res) => {
       message: `No mentor with id ${req.params.mentorId}`,
     });
   } else {
-   res.json(mentor);
+    res.json(mentor);
   }
 });
 
