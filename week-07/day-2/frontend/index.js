@@ -22,11 +22,18 @@ app.get('/doubling', (req, res) => {
 });
 
 app.get('/greeter', (req, res) => {
-  const name = req.query.name || 'Stranger';
-  const name = req.query.title || 'unkown';
-  res.json({
-    welcome message: `Oh, hi there ${name}, my dear ${title}!`
-  });
+  const name = req.query.name;
+  const title = req.query.title;
+  
+  if (req.query.name === undefined) {
+    res.json( { 
+    error: 'Please provide a name!',
+    })
+  } else {
+      res.json({
+      message: `Oh, hi there ${name}, my dear ${title}!`,
+    });
+  };
 });
 
 app.listen(PORT, () => {
