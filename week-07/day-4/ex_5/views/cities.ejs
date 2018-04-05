@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="/static/style.css">
+  <title>weather</title>
+</head>
+<body><h1>
+<%= choosenCity %>
+<% weatherData[id].weather.forEach((e, i) => { %>
+  <%= e.temp %>
+  <%= e.icon %>
+  <%= e.message %>    
+<% }); %>
+</h1>
+</body>
+</html>

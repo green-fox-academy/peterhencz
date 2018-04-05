@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="/static/style.css">
+  <title>weather</title>
+</head>
+<body>
+<h1>weather</h1>
+  <ul> 
+    <% weatherData.forEach(function(item, index) { %>
+      <a href="/?cities=<%= item.city %>&id=<%=index%>" style="cursor: pointer;">
+        <div class="<%= item.weather[0].icon %>">
+          <tr>
+          <td><%= item.city %></td>
+          <td><%= item.location %></td>            
+          <td><%= item.weather[0].temp %></td>            
+          <td><img src="/assets/<%= item.weather[0].icon%>.png" height="100"></td>
+          </tr>
+        </div>
+      </a>
+    <% }); %>
+  </ul>    
+</body>
+</html>
+
+
+

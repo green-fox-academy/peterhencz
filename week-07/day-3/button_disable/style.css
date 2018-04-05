@@ -9,7 +9,10 @@ body{
   background: linear-gradient(17deg, rgb(245, 204, 169), rgb(118, 168, 213));
 }
 
-label, input, button, p {
+label, 
+input, 
+button, 
+p {
   display: inherit;
   margin: 30px;
   padding: 1em;
