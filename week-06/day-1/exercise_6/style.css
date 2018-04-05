@@ -20,7 +20,7 @@ body {
   display: flex;
   width: 100%;
   height: 50px;
-  background-color: #a33ac9;
+  background-color: hsla(284, 57%, 51%, 0.55);
 }
 
 .blue {
@@ -28,7 +28,7 @@ body {
   width: 100px;
   height: 20px;
   display: flex;
-  background-color: #42e5f4;
+  background-color: hsla(185, 89%, 61%, 0.6);
 }
 
 .right {

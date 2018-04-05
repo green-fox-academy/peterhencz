@@ -28,19 +28,20 @@ app.get('/greeter', (req, res) => {
   const name = req.query.name;
   const title = req.query.title;
   
-  if (req.query.name === undefined) {
+  if (name === undefined) {
     res.json( { 
     error: 'Please provide a name!',
-    });
-  } else if (req.query.title === undefined) {
+    })
+  } 
+  else if (title === undefined) {
     res.json ({
-      error: 'Please provide a name!',
-    });
+      error: 'Please provide a title!',
+    })
   } else { 
-    res.json({
-      message: `Oh, hi there ${name}, my dear ${title}!`,
-    });
-  };
+    res.json ({
+      welcome_message: `Oh, hi there ${name}, my dear ${title}!`
+    })
+  }
 });
 
 app.get('/appenda/:appendable', (req, res) => {
@@ -51,25 +52,30 @@ app.get('/appenda/:appendable', (req, res) => {
     });
   } else {
     res.json({
-      message: req.params.appendable + 'a',
+      appended: req.params.appendable + 'a',
     });  
   };
 });
 
-app.post('dountil/:what', (req, res) => {
+app.post('/dountil/:what', (req, res) => {
   const what = req.params.what;
-  const number = req.body.until;
+  const addNumber = req.body.until;
 
   if (what === undefined) {
     res.json({
-      message: 'Please provide a number!',
+      error: 'Please provide a number!',
       });
   } else if (what === 'sum') {
-    var sumOfNumbers = 0;
-
+    let sumOfNumbers = 0;
+    for (let i = 0; i <= addNumber; i++) {
+      sumOfNumbers += i;
+    }
     res.json({
-      "result" : sumOfNumbers
+      result : sumOfNumbers
     })  
+  }
+  else if(what === 'factor') {
+    let sumOfNumbers = 0;
   }
   console.log(sumOfNumbers);
   res.end();

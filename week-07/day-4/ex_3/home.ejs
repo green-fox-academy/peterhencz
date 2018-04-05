@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>todo</title>
+</head>
+<body>
+  <h1>THINGS TO DO: </h1> 
+    <ul> <%= todos %> </ul>
+      <% todo.forEach(function(item) { %>
+        <li><%= item %></li>
+      <% }); %>
+</body>
+</html>
