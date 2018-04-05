@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="/static/style.css">
+  <title>Cocktails</title>
+</head>
+<body>
+  <ul>
+    <h1>Cocktails</h1>
+      <li><a href="/">all</a></li>
+        <% alcoholList.forEach(function(item) { %>
+      <li><a href="/?alcohol=<%= item %>"><%= item %></a></li>
+        <% }); %>
+  </ul>
+  <table>
+    <thead>
+      <tr>
+        <td>Name</td>
+        <td>Price</td>
+      </tr>
+    </thead>
+    <tbody>
+      <% cocktails.forEach(e => { %>
+      <tr>
+        <td>
+          <%= e.name %>
+            <% if (!e.isAlcoholic) { %>
+              (non-alcoholic)
+         <% } %>
+          </br><%= e.contains %></td>
+        <td><%= e.price %></td>
+      </tr>
+   <% }); %>      
+    </tbody>
+  </table>
+</body>
+</html>
