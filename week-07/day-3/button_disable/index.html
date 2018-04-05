@@ -11,15 +11,15 @@
     <p>What is your favourite pet?</p>
     <div>
       <input id="radio-1" class="radio-custom" name="radio-group" type="radio">
-      <label for="radio-1" class="radio-custom-label">Fish</label>
+      <label for="radio-1" class="radio-custom-label">Cat</label>
     </div>
     <div>
         <input id="radio-2" class="radio-custom" name="radio-group" type="radio">
-        <label for="radio-2" class="radio-custom-label">Cat</label>
+        <label for="radio-2" class="radio-custom-label">Dog</label>
     </div>
     <div>
         <input id="radio-3" class="radio-custom" name="radio-group" type="radio">
-        <label for="radio-3" class="radio-custom-label">Dorka</label>
+        <label for="radio-3" class="radio-custom-label">Victor, the fish</label>
     </div>
     </form>
   </div>
@@ -36,9 +36,43 @@
     </div>
     </form>
     <form>
-      <button>I love cats</button>
-      <button>Sign</button>
+      <button class ="cat" disabled>I love cats</button>
+      <button class ="sign" disabled>Sign</button>
     </form>
   </div>
+  <script>
+    'use strict';
+    const cat = document.querySelector('#radio-1');
+    const dog = document.querySelector('#radio-2');
+    const fish = document.querySelector('#radio-3');
+    const catInfoYes = document.querySelector('#radio-4');
+    const catInfoNo = document.querySelector('#radio-5');
+
+    cat.addEventListener('click', catButtonOn);
+    dog.addEventListener('click', catButtonOff);
+    fish.addEventListener('click', catButtonOff);
+    catInfoYes.addEventListener('click', signButtonOn);
+    catInfoNo.addEventListener('click', signButtonOff);
+    
+    const buttonCat = document.querySelector('.cat');
+    const buttonSign = document.querySelector('.sign');
+
+    function signButtonOn() {
+      buttonSign.disabled = false;
+    };
+    function signButtonOff() {
+      buttonSign.disabled = true;
+    }
+    function catButtonOn() {
+      buttonCat.disabled = false;
+    }
+    function catButtonOff() {
+      buttonCat.disabled = true;
+    }
+    function catsAlert() {
+      window.alert(`Thank you, you've successfully signed up for cat facts`);
+    }
+    buttonCat.addEventListener('click', signButtonOn);
+  </script>
 </body>
 </html>

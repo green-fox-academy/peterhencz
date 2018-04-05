@@ -56,7 +56,7 @@ form {
 .radio-custom + .radio-custom-label:before {
     content: '';
     background: #fff;
-    border: 1px solid #0B3459;
+    border: 1px solid #0b3459;
     display: inline-block;
     vertical-align: middle;
     width: 10px;
@@ -104,3 +104,15 @@ button:active {
   outline: none;
 }
 
+button:disabled {
+  background-color:#d1d2d3;
+  -moz-border-radius:28px;
+  -webkit-border-radius:28px;
+  border-radius:28px;
+  border:1px solid #d1d2d3;
+  cursor: no-drop;
+  color:#0B3459;
+  font-family:Avenir;
+  font-size:0.8em;
+  padding: 8px 20px;
+}
