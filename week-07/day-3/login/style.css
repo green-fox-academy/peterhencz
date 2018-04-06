@@ -10,7 +10,9 @@ html {
 
 body {
   padding: 14vw;
-background-image: linear-gradient(to top, #accbee 0%, #e7f0fd 100%);
+  background-image: -webkit-linear-gradient(bottom, #f5f7fa 0%, #c3cfe2 100%);
+  background-image: -o-linear-gradient(bottom, #f5f7fa 0%, #c3cfe2 100%);
+  background-image: linear-gradient(to top, #f5f7fa 0%, #c3cfe2 100%);
 }
 
 .container {

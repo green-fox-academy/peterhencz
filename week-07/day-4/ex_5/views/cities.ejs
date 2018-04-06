@@ -2,16 +2,23 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <link rel="stylesheet" type="text/css" href="/static/style.css">
+  <link rel="stylesheet" type="text/css" href="/static/cities.css">
   <title>weather</title>
 </head>
-<body><h1>
-<%= choosenCity %>
-<% weatherData[id].weather.forEach((e, i) => { %>
-  <%= e.temp %>
-  <%= e.icon %>
-  <%= e.message %>    
-<% }); %>
-</h1>
+<body>
+  <span class="shrink line"><b><%= choosenCity %></b> Forecast for the next 5 days</span><br><br>
+    <% weatherData[id].weather.forEach(function(item, index) { %>
+    <a href="/?home=<%=item.weather%>&id=<%=index%>">
+      <div class="fade <%= item.icon %>" id="<%= item.icon %>">
+        <p class="temp"><%= item.temp %>°</p>
+        <p class="message"><%= item.message %></p>
+        <img class="img" src="/assets/<%= item.icon%>.svg">
+      </div>
+    </a>
+  <% }); %>  
 </body>
 </html>
+
+
+
+ 

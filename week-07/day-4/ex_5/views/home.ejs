@@ -3,26 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <link rel="stylesheet" type="text/css" href="/static/style.css">
-  <title>weather</title>
+  <title>weather forecast</title>
 </head>
 <body>
-<h1>weather</h1>
-  <ul> 
-    <% weatherData.forEach(function(item, index) { %>
-      <a href="/?cities=<%= item.city %>&id=<%=index%>" style="cursor: pointer;">
-        <div class="<%= item.weather[0].icon %>">
-          <tr>
-          <td><%= item.city %></td>
-          <td><%= item.location %></td>            
-          <td><%= item.weather[0].temp %></td>            
-          <td><img src="/assets/<%= item.weather[0].icon%>.png" height="100"></td>
-          </tr>
-        </div>
-      </a>
-    <% }); %>
-  </ul>    
+  <span class="shrink line"><b>Weather Forecast</b> Select a city for the forecast</span><br><br>
+  <% weatherData.forEach(function(item, index) { %>
+    <a href="/?cities=<%=item.city%>&id=<%=index%>">
+      <div class="shrink <%= item.weather[0].icon %>">
+        <p class="city"><%= item.city %></p>
+        <p class="location"><%= item.location %></p>
+        <p class="temp"><%= item.weather[0].temp %>°</p>
+        <img class="img" src="/assets/<%= item.weather[0].icon%>.svg">
+      </div>
+    </a>
+  <% }); %>  
 </body>
 </html>
 
 
 
+ 
