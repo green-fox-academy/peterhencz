@@ -1,4 +1,6 @@
 module.exports = (blackHand, whiteHand) => {
+  // let suit = ['1', '2', '3', '4'];
+  // let suitWithNames = ['H', 'D', 'C', 'S'];
   let row = ['2', '3', '4', '5', '6', '7', '8', '9', 'T', 'J', 'Q', 'K', 'A'];
   let rowWithNames = ['2', '3', '4', '5', '6', '7', '8', '9', 'Ten', 'Jumbo', 'Queen', 'King', 'Ace'];
   let winner = '';
@@ -33,20 +35,33 @@ module.exports = (blackHand, whiteHand) => {
     }
   }
   
-  for (let j = 0; j < 3; j++) {
-    let drillIndexB = row.indexOf(blackHand[j][0]);
-    let drillIndexW = row.indexOf(whiteHand[j][0]);
-    if (blackHand[j][0] === blackHand[j + 1][0] && blackHand[j][0] === blackHand[j + 2][0]) {
+  for (let i = 0; i < 3; i++) {
+    let drillIndexB = row.indexOf(blackHand[i][0]);
+    let drillIndexW = row.indexOf(whiteHand[i][0]);
+    if (blackHand[i][0] === blackHand[i + 1][0] && blackHand[i][0] === blackHand[i + 2][0]) {
       hand = 'Drill';
       winner = 'Black';
       highCardValue = rowWithNames[drillIndexB];
     }
-    if (whiteHand[j][0] === whiteHand[j + 1][0] && whiteHand[j][0] === whiteHand[j + 2][0]) {
+    if (whiteHand[i][0] === whiteHand[i + 1][0] && whiteHand[i][0] === whiteHand[i + 2][0]) {
       hand = 'Drill';
       winner = 'White';
       highCardValue = rowWithNames[drillIndexW];
     }
   }
+
+
+  if (blackHand[0][1] === blackHand[1][1] && blackHand[0][1] === blackHand[2][1] && blackHand[0][1] === blackHand[3][1] && blackHand[0][1] === blackHand[4][1]) {
+    hand = 'Flush';
+    winner = 'Black';
+    highCardValue = blackHand[0][1];
+  }
+  if (whiteHand[0][1] === whiteHand[1][1] && whiteHand[0][1] === whiteHand[2][1] && whiteHand[0][1] === whiteHand[3][1] && whiteHand[0][1] === whiteHand[4][1]) {
+    hand = 'Flush';
+    winner = 'White';
+    highCardValue = whiteHand[0][1];
+  }
+
 
   return `${winner} wins! - (${hand}: ${highCardValue})`;
 };
