@@ -32,5 +32,21 @@ module.exports = (blackHand, whiteHand) => {
       highCardValue = rowWithNames[firstIndexW];
     }
   }
+  
+  for (let j = 0; j < 3; j++) {
+    let drillIndexB = row.indexOf(blackHand[j][0]);
+    let drillIndexW = row.indexOf(whiteHand[j][0]);
+    if (blackHand[j][0] === blackHand[j + 1][0] && blackHand[j][0] === blackHand[j + 2][0]) {
+      hand = 'Drill';
+      winner = 'Black';
+      highCardValue = rowWithNames[drillIndexB];
+    }
+    if (whiteHand[j][0] === whiteHand[j + 1][0] && whiteHand[j][0] === whiteHand[j + 2][0]) {
+      hand = 'Drill';
+      winner = 'White';
+      highCardValue = rowWithNames[drillIndexW];
+    }
+  }
+
   return `${winner} wins! - (${hand}: ${highCardValue})`;
 };

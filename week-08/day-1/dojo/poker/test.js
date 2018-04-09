@@ -45,3 +45,12 @@ test('pair in white hand', (t) => {
   t.equal(pokerCaculator(blackHand, whiteHand), expectedResult);
   t.end();
 });
+
+test('drill in black hand', (t) => {
+  const expectedResult = 'Black wins! - (Drill: 2)';
+  const blackHand = ['2H', '2D', '2S', 'TC', 'KD'];
+  const whiteHand = ['2C', '3H', '4S', '8C', '8S'];
+
+  t.equal(pokerCaculator(blackHand, whiteHand), expectedResult);
+  t.end();
+});
