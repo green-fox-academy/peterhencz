@@ -47,13 +47,19 @@ function Farm (amount) {
     console.log(`The farm has ${this.animals.length} living animals, we are ${this.animalStatus}`);
   }
 
-  // this.progress = function() {
-  //   for(let i = 0; i < this.animals.length; i++) {
-  //     if (Math.random() >= 0.5) {
-  //       Farm.animals.drink();
-  //     }
-  //   }
-  // }
+  this.progress = function() {
+    for(let i = 0; i < this.animals.length; i++) {
+      if (Math.random() >= 0.5) {
+        this.animals[i].drink();
+      }
+      if (Math.random() >= 0.5) {
+        this.animals[i].eat();
+      }
+      if (Math.random() >= 0.5) {
+        this.animals[i].play();
+      }
+    }
+  }
 };
 
 const SheepFarm = new Farm(20);
@@ -61,29 +67,23 @@ const SheepFarm = new Farm(20);
 SheepFarm.breed();
 SheepFarm.breed();
 SheepFarm.breed();
-SheepFarm.breed();
-SheepFarm.breed();
-SheepFarm.breed();
-SheepFarm.breed();
-SheepFarm.breed();
-SheepFarm.breed();
-SheepFarm.breed();
-SheepFarm.breed();
-SheepFarm.breed();
-SheepFarm.breed();
-SheepFarm.breed();
-SheepFarm.breed();
-// SheepFarm.progress();
+SheepFarm.progress();
 SheepFarm.report();
+SheepFarm.breed();
 
 // for(let i = 0; i < 8; i++) {
 //   SheepFarm.animals.forEach(e => Math.random() < 0.2 ? e.play() : e.drink());
 // }
 
 console.log(SheepFarm.animals);
-SheepFarm.adopte();
+
+SheepFarm.progress();
 console.log('\n-------------------------------\n'); 
 console.log(SheepFarm.animals);
 console.log('\n-------------------------------\n'); 
+// SheepFarm.report();
+SheepFarm.progress();
+SheepFarm.adopte();
+console.log(SheepFarm.animals);
 SheepFarm.report();
  
