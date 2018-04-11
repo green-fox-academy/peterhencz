@@ -1,16 +1,4 @@
 'use strict';
-// Create and object called car
-//  - It should store its petrol level called petrolLevel
-//  - It should store its petrol capacity called petrolCapacity
-//  - It should have a refill(amount) method, that increments the petrol level,
-//    than returns how much petrol it consumed from the given amount
-//  - Initialize the petrol level to zero and the capacity to 50 
-//
-// Create an object called station
-//  - It should store petrol amount called petrolStorage
-//  - It should have a provide(car) method that calls the refill method of the car
-//    with the stored petrol amount as a parameter, then decrement the used petrol
-//  - Initialize the petrol amount to 3000
 
 const car = {
   petrolLevel: 5,
@@ -47,7 +35,6 @@ const station = {
   }
 };
 
-
 setInterval(() => {
   if (this.oilBarrels <= 600) { 
     oilCompany.addFuel(10);
@@ -58,40 +45,34 @@ setInterval(() => {
 console.log(station.minPatrolLevel);
 console.log(`Car's petrolLevel: ${car.petrolLevel}`);
 console.log(`Station's petrolStorage: ${station.petrolStorage}`);
-
 station.provide(car);
-
 console.log(`Car's petrolLevel: ${car.petrolLevel}`);
 console.log(`Station's petrolStorage: ${station.petrolStorage}`);
-
-
 car.petrolLevel = 30;
 station.provide(car);
-
 console.log(`Car's petrolLevel: ${car.petrolLevel}`);
 console.log(`Station's petrolStorage: ${station.petrolStorage}`);
-
 car.petrolLevel = 10;
 station.provide(car);
-
-
 console.log(`Car's petrolLevel: ${car.petrolLevel}`);
 console.log(`Station's petrolStorage: ${station.petrolStorage}`);
+car.petrolLevel = 40;
+station.provide(car);
+car.petrolLevel = 40;
+station.provide(car);
+car.petrolLevel = 0;
+station.provide(car);
+car.petrolLevel = 0;
+station.provide(car);
+car.petrolLevel = 0;
+station.provide(car);
 
-car.petrolLevel = 40;
-station.provide(car);
-car.petrolLevel = 40;
-station.provide(car);
 car.petrolLevel = 0;
 station.provide(car);
+
 car.petrolLevel = 0;
 station.provide(car);
-car.petrolLevel = 0;
-station.provide(car);
-car.petrolLevel = 0;
-station.provide(car);
-car.petrolLevel = 0;
-station.provide(car);
+
 car.petrolLevel = 0;
 station.provide(car);
 
