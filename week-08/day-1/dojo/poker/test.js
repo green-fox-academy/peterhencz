@@ -9,7 +9,7 @@ test('high card in whitehand: Ace', (t) => {
   t.equal(pokerCaculator(blackHand, whiteHand), expectedResult);
   t.end();
 });
-
+ 
 test('high card in blackhand: Ace', (t) => {
   const expectedResult = 'Black wins! - (High card: Ace)';
   const blackHand = ['2H', '3D', '5S', '9C', 'AD'];
