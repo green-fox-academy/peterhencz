@@ -3,7 +3,7 @@ function Animal () {
   this.thirst = 5;
   
   this.eat = function() {
-    this.hunger--;
+    this.hunger--; 
   }
   this.drink = function() {
     this.thirst--;
@@ -30,7 +30,7 @@ function Farm (amount) {
     });
     this.animals.pop();
   }
-
+ 
   this.report = function() {
     let animalStatus = '';
     if (this.animals.length === 0) {

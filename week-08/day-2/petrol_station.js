@@ -42,6 +42,10 @@ setInterval(() => {
   }
 }, 1000);
 
+
+
+// test
+
 console.log(station.minPatrolLevel);
 console.log(`Car's petrolLevel: ${car.petrolLevel}`);
 console.log(`Station's petrolStorage: ${station.petrolStorage}`);
@@ -58,30 +62,23 @@ console.log(`Car's petrolLevel: ${car.petrolLevel}`);
 console.log(`Station's petrolStorage: ${station.petrolStorage}`);
 car.petrolLevel = 40;
 station.provide(car);
-car.petrolLevel = 40;
+car.petrolLevel = 20;
 station.provide(car);
-car.petrolLevel = 0;
+car.petrolLevel = 10;
 station.provide(car);
-car.petrolLevel = 0;
+car.petrolLevel = 30;
 station.provide(car);
-car.petrolLevel = 0;
+car.petrolLevel = 24;
 station.provide(car);
-
-car.petrolLevel = 0;
+car.petrolLevel = 26;
 station.provide(car);
-
-car.petrolLevel = 0;
+car.petrolLevel = 8;
 station.provide(car);
-
-car.petrolLevel = 0;
+car.petrolLevel = 12;
 station.provide(car);
-
 console.log(`Car's petrolLevel: ${car.petrolLevel}`);
 console.log(`Station's petrolStorage: ${station.petrolStorage}`);
-
-car.petrolLevel = 0;
+car.petrolLevel = 9;
 station.provide(car);
-
-
 console.log(`Car's petrolLevel: ${car.petrolLevel}`);
 console.log(`Station's petrolStorage: ${station.petrolStorage}`);

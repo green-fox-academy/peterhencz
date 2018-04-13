@@ -6,7 +6,7 @@ const forecasts = [
     city: 'Barcelona',
     location: 'Spain',
     weather: [
-      { temp: 19, icon: 'partly_cloudy', message: 'Sunny.' },
+            {temp: 2, icon: 'h'},
       { temp: 15, icon: 'partly_cloudy', message: 'Not too sunny.' },
       { temp: 17, icon: 'sunny', message: 'So far so good.' },
       { temp: 16, icon: 'rainy', message: 'Rihanna - Umbrella' },
@@ -16,7 +16,7 @@ const forecasts = [
   {
     city: 'London',
     location: 'United Kingdom',
-    weather: [
+    weather: [ 
       { temp: 3, icon: 'rainy', message: 'Meh...' },    
       { temp: 4, icon: 'snowy', message: 'Go home winter.' },
       { temp: 7, icon: 'rainy', message: 'Do you have an umbrella?' },      
