@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="/static/style.css">
+  </head> 
+  <body>
+    <div class="input-form">
+      <form class="simple-form">
+        <h1 class="menu">Save your color</h1>
+        <input id="hexcode" name="hexcode" class="form-input">
+        <h1 class="menu">Add hashtags</h1>
+        <input id="tag1" name="tag1" class="form-input">
+        <input id="tag2" name="tag2" class="form-input">
+        <input id="tag3" name="tag3" class="form-input">
+        <button type="submit" id="form-submit-button">></button>
+      </form>
+    </div>
+      <main class="colors">
+      <% colors.forEach(item => { %>
+        <div class="colors-item shrink cica">
+          <div class="item-hexcode shrink" style="background-color: #<%=item.hexcode%>"></div> 
+          <h1>#<%= item.hexcode %></h1>
+          <div class="item-title"><%= item.title %></div>
+          <div class="item-tags">
+            <span><%= item.tag1 %> </span>
+            <span><%= item.tag2 %> </span>
+            <span><%= item.tag3 %> </span>
+          </div> 
+        </div>
+       <% }) %>
+      </main> 
+    <script src="/static/script.js"></script>
+     <script>
+  $( function() {
+    $( ".colors-item" ).draggable();
+  } );
+  </script>
+  </body>
+</html>
