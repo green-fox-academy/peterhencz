@@ -28,15 +28,25 @@ var cica= new Promise(function (fulfill, reject) {
 
 // cica2.then(null, onReject);
 
-//task 4
+// task 4.
 
-var cica3 = new Promise((fulfill, reject) => {
-  fulfill('I FIRED');
-  reject(new Error('I DID NOT FIRE'));
+// var cica3 = new Promise((fulfill, reject) => {
+//   fulfill('I FIRED');
+//   reject(new Error('I DID NOT FIRE'));
+// });
+
+// function onReject(error) {
+//   console.log(error.message)
+// };
+
+// cica3.then(console.log, onReject);
+
+task 5.
+
+var cica5 = new Promise(function (fulfill, reject) {
+  fulfill('PROMISE VALUE');
 });
+cica5.then(console.log);
 
-function onReject(error) {
-  console.log(error.message)
-};
+console.log('MAIN PROGRAM')
 
-cica3.then(console.log, onReject);
