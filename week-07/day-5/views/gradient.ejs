@@ -22,11 +22,8 @@
       <main class="colors">
       <% colors.forEach(item => { %>
         <div class="colors-item shrink cica" id="<%=item.hexcode%>">
-          <div class="color-items-menu">
-            <p class="marginPlus" >+</p>
-            <p class="marginMinus" >-</p>
-          </div>
-          <div class="item-hexcode shrink fullcolor" style="background-color: #<%=item.hexcode%>"></div> 
+          <p class="marginPlus">+</p>
+          <div class="item-hexcode shrink" style="background-color: #<%=item.hexcode%>"></div> 
           <h1>#<%= item.hexcode %></h1>
           <div class="item-title"><%= item.title %></div>
           <div class="item-tags">
@@ -36,8 +33,18 @@
           </div> 
         </div>
        <% }) %>
+      </main> 
     <script src="/static/script.js"></script>
     <script>
+      $( function() {
+        $( ".colors-item" ).draggable();
+      });
+
+      $( function() {
+        $( ".marginPlus" ).on( "click", function() {
+          $( "#item.hexcode" ).addClass( "newClass");
+        });
+      });
     </script>
   </body>
 </html>

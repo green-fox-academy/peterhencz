@@ -15,6 +15,11 @@ conn.query('SELECT * FROM colors;', function(err, rows) {
   console.log(rows);
 });
 
+conn.query('SELECT * FROM gradient;', function(err, rows) {
+  console.log('Data received from Database: \n');
+  console.log(rows);
+});
+
 app.set('view engine', 'ejs');
 app.set('views', 'views');
 app.use('/', express.static('static'));
@@ -28,7 +33,7 @@ app.get('/hello', (req, res) => {
 });
 
 app.get('/colors', function(req, res) {
-  conn.query('SELECT * FROM colors;', function(err, rows) {
+  conn.query('SELECT * FROM colors ORDER BY id DESC;', function(err, rows) {
     if (err) {
       console.log(err.toString());
       res.status(200).send('Database error');
@@ -39,7 +44,7 @@ app.get('/colors', function(req, res) {
 });
 
 app.get('/', (req, res) => {
-  let sql = 'SELECT * FROM colors;';
+  let sql = 'SELECT * FROM colors ORDER BY id DESC;';
   let queryInputs = [];
   conn.query(sql, queryInputs, (err, result) => {
     if (err) {

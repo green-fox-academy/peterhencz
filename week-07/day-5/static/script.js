@@ -1,62 +1,85 @@
-document.querySelector('form').addEventListener('submit', (e) => {
+const submitButton = document.querySelector('#form-submit-button');
+
+submitButton.addEventListener('click', (e) => {
   e.preventDefault();
- 
-  const formData = document.querySelector('form');
-  const xmlhttp = new XMLHttpRequest();
-console.log('this is the submit')
-  xmlhttp.open('POST', '/colors');
-  xmlhttp.setRequestHeader('Content-Type', 'application/json');
-  xmlhttp.onload = () => {
-      const colorsItem = document.createElement('div');
-      colorsItem.classList.add('colors-item');
 
-      const itemHexcode = document.createElement('div');
-      itemHexcode.classList.add('item-hexcode');
-      itemHexcode.style.backgroundColor = `#${hexcode}`;
-      colorsItem.appendChild(itemHexcode);
+const formData = document.querySelector('form');
+const xhr = new XMLHttpRequest();
 
-      const h1 = document.createElement('h1');
-      h1.innerText = formData.elements.hexcode.value;
-      colorsItem.appendChild(h1);
+xhr.open('POST', '/colors');
+xhr.setRequestHeader('Content-Type', 'application/json');
+xhr.onload = () => {
+  const colorsItem = document.createElement('div');
+  colorsItem.classList.add('colors-item', 'shrink', 'ui-draggable', 'ui-draggable-handle');
+  colorsItem.id = `#${hexcode}`;
 
-      const itemTitle = document.createElement('div')
-      itemTitle.classList.add('item-title')
-      colorsItem.appendChild(itemTitle)
+  const colorsItemMenu = document.createElement('div');
+  colorsItemMenu.classList.add('color-items-menu');
+  colorsItem.appendChild(colorsItemMenu);
 
-      const itemTags = document.createElement('div')
-      itemTags.classList.add('item-tags')
-      colorsItem.appendChild(itemTags)
- 
-      const itemTag1 = document.createElement('span');
-      itemTag1.innerText = formData.elements.tag1.value;
-      itemTags.appendChild(itemTag1);
-      itemTag1.addEventListener('click', onTagCLick)
+  const addMargin = document.createElement('p');
+  addMargin.classList.add('marginPlus');
+  addMargin.innerText = '+';
+  addMargin.addEventListener('click', function(){
+    colorsItem.style.margin = '200px';
+  });
+  colorsItemMenu.appendChild(addMargin);
 
-      const itemTag2 = document.createElement('span');
-      itemTag2.innerText = formData.elements.tag2.value;
-      itemTags.appendChild(itemTag2);
-      itemTag2.addEventListener('click', onTagCLick)
+  const removeMargin = document.createElement('p');
+  removeMargin.classList.add('marginMinus');
+  removeMargin.innerText = '-';
+  removeMargin.addEventListener('click', function(){
+    colorsItem.style.margin = '0.5vw';
+  });
+  colorsItemMenu.appendChild(removeMargin);
 
-      const itemTag3 = document.createElement('span');
-      itemTag3.innerText = formData.elements.tag3.value;
-      itemTags.appendChild(itemTag3);
-      itemTag3.addEventListener('click', onTagCLick)
+  const itemHexcode = document.createElement('div');
+  itemHexcode.classList.add('item-hexcode');
+  itemHexcode.style.backgroundColor = `#${hexcode}`;
+  itemHexcode.addEventListener('click', function(){
+  colorsItem.style.backgroundColor = `#${hexcode}`;
+    });
+  colorsItem.appendChild(itemHexcode);
 
-      const colors = document.querySelector('.colors');
-      // colors.appendChild(colorsItem);
-      colors.insertBefore(colorsItem, document.querySelector('.colors > div:first-of-type'));
+  const h1 = document.createElement('h1');
+  h1.innerText = formData.elements.hexcode.value;
+  colorsItem.appendChild(h1);
 
-      formData.elements.hexcode.value = '';
-      formData.elements.tag1.value = '';
-      formData.elements.tag2.value = '';
-      formData.elements.tag3.value = '';    
-  };
+  const itemTitle = document.createElement('div')
+  itemTitle.classList.add('item-title')
+  colorsItem.appendChild(itemTitle)
 
-  let hexcode = formData.elements.hexcode.value;
+  const itemTags = document.createElement('div')
+  itemTags.classList.add('item-tags')
+  colorsItem.appendChild(itemTags)
+
+  const itemTag1 = document.createElement('span');
+  itemTag1.innerText = formData.elements.tag1.value;
+  itemTags.appendChild(itemTag1);
+
+
+  const itemTag2 = document.createElement('span');
+  itemTag2.innerText = formData.elements.tag2.value;
+  itemTags.appendChild(itemTag2);
+
+  const itemTag3 = document.createElement('span');
+  itemTag3.innerText = formData.elements.tag3.value;
+  itemTags.appendChild(itemTag3);
+
+  const colors = document.querySelector('.colors');
+  colors.insertBefore(colorsItem, document.querySelector('.colors > div:first-of-type'));
+
+  formData.elements.hexcode.value = '';
+  formData.elements.tag1.value = '';
+  formData.elements.tag2.value = '';
+  formData.elements.tag3.value = '';    
+};
+
+let hexcode = formData.elements.hexcode.value;
   if (hexcode[0] === '#') {
     hexcode = hexcode.replace('#', '');
   }
-  xmlhttp.send(JSON.stringify({
+  xhr.send(JSON.stringify({
     hexcode: hexcode,
     tag1: formData.elements.tag1.value,
     tag2: formData.elements.tag2.value,
@@ -64,40 +87,32 @@ console.log('this is the submit')
   }));
 });
 
-const spans = document.querySelectorAll('span');
+let colorsItems = document.querySelectorAll('.colors-item');
+let addMargins = document.querySelectorAll('.marginPlus');
 
-function setUpSpans() {
-  spans.forEach(span => {
-    span.addEventListener('click', onTagCLick)
+addMargins.forEach((e, i) => {
+  e.addEventListener('click', function(){
+    colorsItems[i].style.margin = '200px';
   });
-};
-
-function onTagCLick(event) { 
-  let selectedTag = event.target.outerText;
-  console.log(selectedTag)
-  let hiddenDivs = document.querySelectorAll('.colors-item');
-  hiddenDivs.forEach(div => {
-    let lastDiv = div.querySelector('div:last-of-type')
-    let spansInLastDiv = lastDiv.querySelectorAll('span')
-    let fukinChecker = false;
-    spansInLastDiv.forEach(spang => spang.outerText === selectedTag ? fukinChecker = true : '');
-    if(!fukinChecker) {
-      div.classList.add('invisible');
-    }
-  })
-}
-
-setUpSpans();
-
-let cica = document.querySelectorAll('.cica');
-cica.forEach(e => {
-  e.onclick = (event) => { 
-    if (event.target.tagName !== 'SPAN') {  
-      let hiddenDivs = document.querySelectorAll('.invisible');
-      hiddenDivs.forEach(div => {
-      div.classList.remove('invisible');
-      });
-    }
-  };
 });
-    
+
+let removeMargins = document.querySelectorAll('.marginMinus');
+
+removeMargins.forEach((e, i) => {
+  e.addEventListener('click', function(){
+    colorsItems[i].style.margin = '0.5vw';
+  });
+});
+
+
+let fullBackgroundColor = document.querySelectorAll('.item-hexcode');
+
+fullBackgroundColor.forEach((e, i) => {
+  e.addEventListener('click', function(){
+   colorsItems[i].classList.add('fullcolor');
+  });
+});
+
+$( function() {
+  $( ".colors-item" ).draggable();
+});
