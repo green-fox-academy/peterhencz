@@ -44,7 +44,7 @@ function Farm (amount) {
     if (this.animals.length === this.slot) {
       this.animalStatus = 'full'
     }   
-    console.log(`The farm has ${this.animals.length} living animals, we are ${this.animalStatus}`);
+    return `The farm has ${this.animals.length} living animals, we are ${this.animalStatus}`;
   }
 
   this.progress = function() {
