@@ -14,7 +14,7 @@ function createTable(attractions) {
     row.appendChild(tableDataName);
 
     const tableDataCity = document.createElement('td');
-    tableDataCity.textContent = formData.elements.city.value;
+    tableDataCity.textContent = e.city;
     row.appendChild(tableDataCity);
 
     const tableDataPrice = document.createElement('td');
@@ -43,19 +43,19 @@ function createTable(attractions) {
 
     const button = document.createElement('button');
     button.innerText = 'EDIT';
-
-  formData.elements.city.value = '';
     
-
     row.appendChild(button); 
     tbody.appendChild(row);
   });
 }
 
+function createForm() {
+
+}
 
 fetch(url)
-  .then( (resulte) => resulte.json())
+  .then( (result) => result.json())
   .then( (myJson) => {
       createTable(myJson.attractions);
-  });
+});
 
