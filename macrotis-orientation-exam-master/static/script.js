@@ -1,5 +1,6 @@
 let url = 'http://localhost:8080/tourist';
 
+
   const formData = document.querySelector('form');
 
 const tbody = document.querySelector('tbody');
@@ -53,9 +54,16 @@ function createForm() {
 
 }
 
-fetch(url)
+fetch(url, {
+  method: "post",
+  headers: {
+    'Accept': 'application/json',
+    'Content-Type': 'application/json'
+  },
+    body: JSON.stringify({
+      queryInputs
+  })
+
   .then( (result) => result.json())
   .then( (myJson) => {
       createTable(myJson.attractions);
-});
-
