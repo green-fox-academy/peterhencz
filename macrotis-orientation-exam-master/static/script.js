@@ -1,24 +1,61 @@
 let url = 'http://localhost:8080/tourist';
 
-      let row = document.createElement('tr');
-            console.log(row);
+  const formData = document.querySelector('form');
+
+const tbody = document.querySelector('tbody');
 
 function createTable(attractions) {
   attractions.forEach((e) => {
     
     const row = document.createElement('tr');
-            console.log(row);
+
     const tableDataName = document.createElement('td');
-    tableDataName.textContent = e.attractions.attr_name;
+    tableDataName.textContent = e.attr_name;
     row.appendChild(tableDataName);
-             console.log(attractions[1].city);
+
+    const tableDataCity = document.createElement('td');
+    tableDataCity.textContent = formData.elements.city.value;
+    row.appendChild(tableDataCity);
+
+    const tableDataPrice = document.createElement('td');
+    tableDataPrice.textContent = e.price;
+    row.appendChild(tableDataPrice);
+
+    const tableDataLongitude = document.createElement('td');
+    tableDataLongitude.textContent = e.longitude;
+    row.appendChild(tableDataLongitude);
+
+    const tableDataLattitude = document.createElement('td');
+    tableDataLattitude.textContent = e.lattitude;
+    row.appendChild(tableDataLattitude);
+
+    const tableDataCategory= document.createElement('td');
+    tableDataCategory.textContent = e.category;
+    row.appendChild(tableDataCategory);
+
+    const tableDataDuration= document.createElement('td');
+    tableDataDuration.textContent = e.duration;
+    row.appendChild(tableDataDuration);
+
+    const tableDataAge= document.createElement('td');
+    tableDataAge.textContent = e.recommended_age;
+    row.appendChild(tableDataAge);
+
+    const button = document.createElement('button');
+    button.innerText = 'EDIT';
+
+  formData.elements.city.value = '';
+    
+
+    row.appendChild(button); 
+    tbody.appendChild(row);
   });
 }
+
+
 fetch(url)
   .then( (resulte) => resulte.json())
   .then( (myJson) => {
       createTable(myJson.attractions);
-      // const tableDataName = document.createElement('td');
-      // tableDataName.textContent = myJson.attractions;
-      // row.appendChild(tableDataName);
   });
+
