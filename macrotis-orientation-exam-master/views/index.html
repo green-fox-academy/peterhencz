@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Tourist Inform</title>
+  <link rel="stylesheet" type="text/css" href="/static/style.css">
 </head>
 <body>
   <h1>Tourist Inform</h1>
@@ -17,12 +18,56 @@
         <td>CATEGORY</td>   
         <td>DURATION</td>             
         <td>RECOMMENDED AGE</td>
-        <button></button>  
       </tr>
     </thead>
     <tbody>
     </tbody>
   </table>
+
+  <form >
+    <label for="name">
+      <span>Name:</span>
+      <input type="text" id="name" value="attr_name">
+    </label>
+
+    <label for="city">
+      <span>City:</span>
+      <input type="text" id="city" value="city">
+    </label>
+
+    <label for="price">
+      <span>Price:</span>
+      <input type="text" id="price" value="price">
+    </label>
+
+    <label for="longitude">
+      <span>Longitude:</span>
+      <input type="text" id="longitude" value="longitude">
+    </label>
+
+    <label for="lattitude">
+      <span>Lattitude:</span>
+      <input type="text" id="lattitude" value="lattitude">
+    </label>
+
+    <label for="category">
+      <span>Category:</span>
+      <input type="text" id="category" value="category">
+    </label>
+
+    <label for="duration">
+      <span>Duration:</span>
+      <input type="text" id="duration" value="duration">
+    </label>
+
+    <label for="age">
+      <span>Recommended age:</span>
+      <input type="text" id="age" value="recommended_age">
+    </label>
+
+    <input type="submit">
+  </form>
+
   <script src="/static/script.js"></script>
 </body>
 </html>

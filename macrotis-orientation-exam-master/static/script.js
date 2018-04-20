@@ -42,28 +42,48 @@ function createTable(attractions) {
     tableDataAge.textContent = e.recommended_age;
     row.appendChild(tableDataAge);
 
-    const button = document.createElement('button');
-    button.innerText = 'EDIT';
+    // const button = document.createElement('button');
+    // button.innerText = 'EDIT';
+    // button.onclick = (event) => {
+
+    // // formData.elements.attr_name.value = '';
+    // // formData.elements.city.value = '';
+    // // formData.elements.price.value = '';
+    // // formData.elements.longitude.value = '';   
+    // // formData.elements.lattitude.value = '';
+    // // formData.elements.category.value = '';
+    // // formData.elements.duration.value = '';
+    // // formData.elements.recommended.value = '';   
+
+    // }
     
     row.appendChild(button); 
     tbody.appendChild(row);
   });
 }
 
-function createForm() {
+// function createForm() {
+// }
 
-}
 
-fetch(url, {
-  method: "post",
-  headers: {
-    'Accept': 'application/json',
-    'Content-Type': 'application/json'
-  },
-    body: JSON.stringify({
-      queryInputs
-  })
+// post and get works but separately
 
+fetch(url)
   .then( (result) => result.json())
   .then( (myJson) => {
       createTable(myJson.attractions);
+});
+
+// fetch(url, {
+//   method: "post",
+//   headers: {
+//     'Accept': 'application/json',
+//     'Content-Type': 'application/json'
+//   },
+//     body: JSON.stringify({
+//       queryInputs
+//   })
+
+//   .then( (result) => result.json())
+//   .then( (myJson) => {
+//       createTable(myJson.attractions);

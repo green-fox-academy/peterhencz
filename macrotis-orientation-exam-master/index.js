@@ -23,7 +23,6 @@ app.get('/',(req, res) => {
   res.sendFile(__dirname + '/views/index.html');
 });
 
-
 app.get('/tourist', (req, res) => {
   const sqlAttractions = 'SELECT * FROM attractions';
   conn.query(sqlAttractions, (err, result) => {
@@ -37,6 +36,22 @@ app.get('/tourist', (req, res) => {
   });
 });
 
+
+app.post('/add', (req, res) => {
+  const sqlPost = 'INSERT INTO attractions (attr_name, city, price, longitude, lattitude, category, duration, recommended_age) VALUES (?, ?, ?, ?, ?, ?, ?, ?);';
+  const queryInputs = [req.body.attr_name, req.body.city, req.body.price, req.body.longitude, req.body.lattitude, req.body.category, req.body.duration, req.body.recommended_age];
+
+  conn.query(sqlPost, queryInputs, (err, inputs) => {
+    if (err) {
+      console.log(err);
+      res.sendStatus(500);
+    }
+    res.json({
+      "status": "ok",
+      "id": 1
+    });
+  });
+});
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`); 
